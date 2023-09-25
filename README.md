@@ -1,3 +1,15 @@
+The issue is now fixed with setupmeta 3.5.2, by populating both `dist.install_requires` AND `dist.metadata.install_requires`
+
+It appears that setuptools is using those fields possibly inconsistently.
+
+
+The script `create-venv.sh` can be used to investigate the issue with distinct version of setuptools.
+
+
+--------
+
+
+
 To repro the problem:
 
 ::
