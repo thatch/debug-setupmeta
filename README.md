@@ -16,7 +16,7 @@ To repro the problem:
 
     python -m venv .venv
     source .venv/bin/activate
-    pip install -U pip wheel setupmeta
+    pip install -U pip wheel setupmeta==3.5.1  # before workaround added
     pip install -e /path/to/setuptools
     python setup.py dist_info
 
@@ -30,4 +30,4 @@ after, including today's main, `2255e6366c70b9813d115ae0a0bba329affbd0ac`
 
 This does not appear to be limited to calling `setup.py` directly, and is
 possible to trigger with `pip wheel` and others.  The `egg_info` contains
-dependencies, but the `dist_info` does not.
+dist.dependencies, but the `dist_info` does not.
